@@ -5,7 +5,7 @@
 
         body { 
              background: linear-gradient(rgba(32,32,32,0.3), rgba(32,32,32,0.3)),
-            url(img/authentic\ login\ img.jpg) no-repeat center/cover;
+            url(..//img/authentic\ login\ img.jpg) no-repeat center/cover;
             background-color: var(--soft-bg); 
             height: 100vh; 
             display: flex; 
