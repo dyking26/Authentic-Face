@@ -1,0 +1,68 @@
+ body { background-color: #f7e1e4; font-family: 'Segoe UI', sans-serif; color: #333; }
+
+        .settings-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        /* Header */
+        .settings-header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .section-box {
+            padding: 20px;
+            border-bottom: 8px solid #f8f9fa; /* Separation like real apps */
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Range Slider Styling */
+        .range-value {
+            float: right;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-range::-webkit-slider-thumb { background: #ff4d4d; }
+        .form-range::-moz-range-thumb { background: #ff4d4d; }
+
+        /* Custom Toggle Switch */
+        .form-check-input:checked {
+            background-color: #ff4d4d;
+            border-color: #ff4d4d;
+        }
+
+        /* Preference Row */
+        .pref-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .location-info {
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 12px;
+            color: #ff4d4d;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }

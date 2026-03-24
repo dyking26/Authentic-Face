@@ -1,0 +1,95 @@
+ :root {
+            --primary-red: #ff4d4d;
+            --soft-bg: #fff5f5;
+        }
+
+        body { 
+             background: linear-gradient(rgba(32,32,32,0.3), rgba(32,32,32,0.3)),
+            url(img/authentic\ login\ img.jpg) no-repeat center/cover;
+            background-color: var(--soft-bg); 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
+            text-align: center;
+        }
+
+        .brand-logo {
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            display: block;
+            text-decoration: none;
+        }
+        .logo-bold { font-weight: 800; color: #333; }
+        .logo-light { font-weight: 300; color: #555; }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-red);
+            background-color: #fff;
+        }
+
+        .btn-login {
+            background-color: var(--primary-red);
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            border: none;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-login:hover {
+            background-color: #e63939;
+            transform: translateY(-2px);
+        }
+
+        .social-login {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .btn-social {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.2s;
+        }
+        .btn-social:hover { background-color: #f8f9fa; }
+
+        .forgot-pass {
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+            display: block;
+            margin-top: 15px;
+        }

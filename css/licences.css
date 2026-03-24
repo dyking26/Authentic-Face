@@ -1,0 +1,39 @@
+
+        :root {
+            --primary-red: #ff4d4d;
+            --bg-gray: #f7e1e4;
+        }
+
+        body { background-color: var(--bg-gray); font-family: 'Segoe UI', sans-serif; color: #444; }
+
+        .licence-container { max-width: 700px; margin: 50px auto; }
+
+        /* Licence Card */
+        .licence-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            transition: 0.2s;
+        }
+        .licence-card:hover { border-color: var(--primary-red); }
+
+        .lib-name { font-weight: 800; font-size: 1.2rem; color: #222; margin-bottom: 5px; }
+        .badge-licence { background: #eee; color: #666; font-weight: 600; font-size: 11px; padding: 5px 10px; border-radius: 5px; text-transform: uppercase; }
+        
+        .licence-text { 
+            font-family: 'Courier New', Courier, monospace; 
+            font-size: 13px; 
+            background: #f8f8f8; 
+            padding: 15px; 
+            border-radius: 8px; 
+            max-height: 150px; 
+            overflow-y: auto; 
+            margin-top: 15px;
+            border: 1px solid #f0f0f0;
+            color: #777;
+        }
+
+        .header-area { text-align: center; margin-bottom: 40px; }
+        .back-link { color: var(--primary-red); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 20px; }

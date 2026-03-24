@@ -1,0 +1,64 @@
+ body { background-color: #f7e1e4; font-family: 'Segoe UI', sans-serif; color: #333; }
+
+        .settings-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .settings-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .section-box {
+            padding: 10px 20px;
+            border-bottom: 8px solid #f8f9fa;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #888;
+            text-transform: uppercase;
+            margin: 15px 0 10px 0;
+            display: block;
+        }
+
+        /* Settings List Items */
+        .settings-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .settings-link:last-child { border-bottom: none; }
+        .settings-link span.val { color: #888; font-size: 15px; }
+        .settings-link i.fa-chevron-right { color: #ccc; font-size: 12px; }
+
+        /* Logout/Delete Buttons */
+        .danger-zone { padding: 30px 20px; text-align: center; }
+        .btn-logout { 
+            color: #333; font-weight: 600; text-decoration: none; 
+            display: block; margin-bottom: 25px; 
+        }
+        .btn-delete { 
+            color: #ff4d4d; font-size: 14px; text-decoration: none; 
+            font-weight: 600; opacity: 0.8;
+        }
+
+        /* Logo styling */
+         .brand-logo { font-size: 1.2rem; text-decoration: none; margin-bottom: 10px; display: inline-block; }
+        .logo-bold { font-weight: 800; color: #333; }
+        .logo-light { font-weight: 300; color: #555; }

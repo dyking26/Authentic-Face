@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery Settings | Authentic-Face</title>
+   
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/discovery-settings.css">
+</head>
+
+<body>
+    <div class="settings-container">
+        <div class="settings-header">
+            <a href="active-user-profile.html" class="text-dark text-decoration-none"><i
+                    class="fa fa-chevron-left"></i></a>
+            <h5 class="mb-0 fw-bold">Discovery Settings</h5>
+            <a href="dashboard.html" class="text-danger fw-bold text-decoration-none">Save</a>
+        </div>
+
+        <div class="section-box">
+            <span class="section-label">Location</span>
+            <div class="location-info">
+                <i class="fa fa-location-arrow me-2"></i> Current Location: Aba, Nigeria
+            </div>
+            <small class="text-muted">Discovery uses your location to show people nearby.</small>
+        </div>
+
+        <div class="section-box">
+            <span class="section-label">Maximum Distance <span class="range-value" id="distVal">50 km</span></span>
+            <input type="range" class="form-range" min="1" max="160" value="50" id="distRange"
+                oninput="updateDist(this.value)">
+            <div class="pref-row">
+                <small class="text-muted">Show people further away if I run out</small>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <span class="section-label">Show Me</span>
+            <div class="list-group list-group-flush">
+                <label class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                    Men
+                    <input class="form-check-input" type="radio" name="genderPref" value="men">
+                </label>
+                <label class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                    Women
+                    <input class="form-check-input" type="radio" name="genderPref" value="women" checked>
+                </label>
+                <label class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                    Everyone
+                    <input class="form-check-input" type="radio" name="genderPref" value="everyone">
+                </label>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <span class="section-label">Age Range <span class="range-value">18 - 35</span></span>
+            <input type="range" class="form-range" min="18" max="100" value="35">
+            <small class="text-muted">We use these preferences to help you find the best matches.</small>
+        </div>
+
+        <div class="section-box">
+            <div class="pref-row">
+                <div>
+                    <span class="section-label mb-0">Global Mode</span>
+                    <small class="text-muted d-block">See people from all over the world.</small>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="globalToggle">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function updateDist(val) {
+            document.getElementById('distVal').innerText = val + " km";
+        }
+    </script>
+
+</body>
+<script src="dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

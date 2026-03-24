@@ -1,0 +1,60 @@
+:root {
+            --primary-red: #ff4d4d;
+            --soft-bg: #f7e1e4;
+        }
+
+        body { background-color: var(--soft-bg); font-family: 'Segoe UI', sans-serif; color: #333; }
+
+        /* Header */
+        .support-header {
+            background: linear-gradient(135deg, var(--primary-red), #c0392b);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+        }
+
+        /* Help Cards */
+        .help-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            border: none;
+            transition: 0.3s;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .help-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(255, 77, 77, 0.1); }
+        .help-card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 15px; }
+
+        /* Form Styling */
+        .contact-container {
+            max-width: 800px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-label { font-weight: 700; font-size: 0.9rem; color: #555; }
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 12px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+        }
+        .form-control:focus { border-color: var(--primary-red); box-shadow: none; }
+
+        .btn-submit {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background: #e63939; opacity: 0.9; }

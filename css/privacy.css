@@ -1,0 +1,46 @@
+:root {
+            --primary-red: #ff4d4d;
+            --bg-light: #f7e1e4;
+        }
+
+        body { background-color: var(--bg-light); font-family: 'Segoe UI', sans-serif; color: #444; }
+
+        /* Header Area */
+        .privacy-hero {
+            background-color: white;
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        .brand-logo { font-size: 1.2rem; text-decoration: none; margin-bottom: 10px; display: inline-block; }
+        .logo-bold { font-weight: 800; color: #333; }
+        .logo-light { font-weight: 300; color: #555; }
+
+        /* Data Icons Section */
+        .data-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+            height: 100%;
+            transition: 0.3s;
+        }
+        .data-card:hover { border-color: var(--primary-red); }
+        .data-card i { font-size: 2rem; color: var(--primary-red); margin-bottom: 15px; }
+
+        /* Content Sections */
+        .policy-section { margin-bottom: 50px; }
+        .policy-section h3 { font-weight: 800; color: #222; margin-bottom: 20px; }
+        .policy-section p { line-height: 1.8; color: #666; }
+
+        /* Simple Highlight Box */
+        .privacy-box {
+            background: #fff5f5;
+            padding: 30px;
+            border-radius: 25px;
+            border-left: 6px solid var(--primary-red);
+        }
+
+        .back-nav { padding: 20px 0; }
+        .back-btn { color: var(--primary-red); text-decoration: none; font-weight: 700; }

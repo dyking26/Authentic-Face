@@ -1,0 +1,79 @@
+        :root {
+            --primary-red: #ff4d4d;
+            --bg-soft: #f7e1e4;
+        }
+
+        body { 
+            background-color: var(--bg-soft); 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .empty-container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        /* The Radar Animation */
+        .radar-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-avatar-center {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+            object-fit: cover;
+        }
+
+        .pulse {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: radar-pulse 3s infinite linear;
+        }
+
+        .pulse:nth-child(2) { animation-delay: 1s; }
+        .pulse:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes radar-pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        h3 { font-weight: 800; color: #333; margin-bottom: 10px; }
+        p { color: #888; font-size: 1.05rem; margin-bottom: 30px; }
+
+        .btn-settings {
+            background: white;
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-settings:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: translateY(-2px);
+        }

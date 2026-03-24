@@ -1,0 +1,63 @@
+ body { background: #000; color: white; height: 100vh; overflow: hidden; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Camera Viewfinder */
+        .camera-container {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .viewfinder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            position: relative;
+            overflow: hidden;
+            background: #222; /* Mock camera feed */
+            box-shadow: 0 0 0 1000px rgba(0,0,0,0.6); /* Darkens outside the circle */
+        }
+
+        /* Scanning Animation Line */
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 123, 255, 0.8);
+            box-shadow: 0 0 15px #007bff;
+            top: 0;
+            animation: scan 3s infinite ease-in-out;
+        }
+
+        @keyframes scan {
+            0%, 100% { top: 0%; }
+            50% { top: 100%; }
+        }
+
+        /* Instructions */
+        .instruction-box {
+            position: absolute;
+            bottom: -80px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pose-hint {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-capture {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            margin-top: 40px;
+        }

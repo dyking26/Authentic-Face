@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Identity | Authentic-Face</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/verification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <div class="p-3">
+        <a href="active-user-profile.html" class="text-white fs-4"><i class="fa fa-times"></i></a>
+    </div>
+
+    <div class="text-center px-4">
+        <h4 class="fw-bold">Copy the Pose</h4>
+        <p class="text-secondary small">Position your face in the circle and tilt your head to the right.</p>
+    </div>
+
+    <div class="camera-container">
+        <div class="viewfinder">
+            <div class="scan-line"></div>
+            <i class="fa fa-user-circle" style="font-size: 200px; color: rgba(255,255,255,0.1); position: absolute; top: 40px; left: 40px;"></i>
+        </div>
+
+        <div class="instruction-box px-4">
+            <div class="pose-hint d-flex align-items-center justify-content-center">
+                <i class="fa fa-arrows-rotate me-3 text-info"></i>
+                <span class="small fw-bold">TILT HEAD RIGHT</span>
+            </div>
+            
+            <button class="btn-capture shadow" onclick="startScanning()"></button>
+            <p class="mt-3 text-secondary x-small">The photo will be taken automatically</p>
+        </div>
+    </div>
+
+    <script>
+        function startScanning() {
+            // Simulate scanning progress
+            const line = document.querySelector('.scan-line');
+            line.style.background = '#2ecc71'; // Change to green
+            line.style.boxShadow = '0 0 15px #2ecc71';
+            
+            setTimeout(() => {
+                window.location.href = 'verify-success.html'; // Direct to your success page
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>

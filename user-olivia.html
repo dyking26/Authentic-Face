@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery | Olivia</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/user-olivia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+</head>
+<body>
+
+<div class="profile-container">
+    <a href="dashboard.html" class="back-btn"><i class="fa fa-chevron-left"></i></a>
+
+    <div id="oliviaCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#oliviaCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#oliviaCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#oliviaCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/profile 1a.jpg" alt="Olivia 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/profile 1b.jpg" alt="Olivia 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/profile 1c.jpg" alt="Olivia 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev w-25" type="button" data-bs-target="#oliviaCarousel" data-bs-slide="prev"></button>
+        <button class="carousel-control-next w-25" type="button" data-bs-target="#oliviaCarousel" data-bs-slide="next"></button>
+    </div>
+
+    <div class="profile-content">
+        <div class="name-age">Olivia, 27 <i class="fa-solid fa-circle-check verified-badge"></i></div>
+        <div class="location-tag">
+            <i class="fa-solid fa-location-dot me-1"></i> 5 km away • <span class="text-success fw-bold">Online</span>
+        </div>
+
+        <div class="section-title">My Story</div>
+        <p class="bio-text">
+            Full-time architecture nerd and part-time bookworm. 🏛️ If I'm not sketching new buildings, I'm probably hunting for the best sourdough in the city. Let's talk about design, travel, or the best place to get a Negroni.
+        </p>
+
+        <div class="section-title">Interests</div>
+        <div class="interests-container">
+            <span class="interest-badge">🎨 Architecture</span>
+            <span class="interest-badge">📚 Reading</span>
+            <span class="interest-badge">🍸 Cocktails</span>
+            <span class="interest-badge">🐕 Dogs</span>
+            <span class="interest-badge">🌆 City Walks</span>
+        </div>
+
+        <div class="section-title">Essentials</div>
+        <div class="row g-2 text-muted">
+            <div class="col-6 mb-2"><i class="fa-solid fa-house-chimney me-2"></i> Architect</div>
+            <div class="col-6 mb-2"><i class="fa-solid fa-paw me-2"></i> Has a Golden Retriever</div>
+            <div class="col-6 mb-2"><i class="fa-solid fa-wine-glass me-2"></i> Socially</div>
+            <div class="col-6 mb-2"><i class="fa-solid fa-language me-2"></i> English & French</div>
+        </div>
+    </div>
+
+    <div class="action-bar-fixed">
+        <button class="circle-btn btn-dislike"><i class="fa fa-xmark"></i></button>
+        <button class="circle-btn btn-star"><i class="fa fa-star"></i></button>
+        <button class="circle-btn btn-like"><i class="fa fa-heart"></i></button>
+    </div>
+</div>
+
+<script src="dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+ :root {
+     --primary-red: #ff4d4d;
+     --bg-gray: #f4f4f7;
+ }
+
+ body {
+     background-color: var(--bg-gray);
+     font-family: 'Segoe UI', sans-serif;
+     padding-bottom: 40px;
+ }
+
+ /* Custom Header */
+ .edit-header {
+     background: white;
+     padding: 15px 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-bottom: 1px solid #eee;
+     position: sticky;
+     top: 0;
+     z-index: 100;
+ }
+
+ .save-btn {
+     color: var(--primary-red);
+     font-weight: bold;
+     border: none;
+     background: none;
+     font-weight: 700;
+ }
+
+ /* Form Sections */
+ .section-card {
+     background: white;
+     margin-top: 20px;
+     padding: 20px;
+     border-radius: 15px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+ }
+
+ .section-title {
+     font-size: 0.85rem;
+     color: #888;
+     text-transform: uppercase;
+     font-weight: 700;
+     margin-bottom: 15px;
+ }
+
+ /* Input Styling */
+ .form-control-custom {
+     border: none;
+     border-bottom: 1px solid #eee;
+     border-radius: 0;
+     padding: 10px 0;
+     font-weight: 500;
+ }
+
+ .form-control-custom:focus {
+     box-shadow: none;
+     border-bottom: 1px solid var(--primary-red);
+ }
+
+ /* Interest Tags */
+ .interest-tag {
+     display: inline-block;
+     background: #fff;
+     border: 1px solid #ddd;
+     padding: 6px 15px;
+     border-radius: 20px;
+     margin: 0 5px 10px 0;
+     font-size: 0.9rem;
+     color: #555;
+     cursor: pointer;
+ }
+
+ .interest-tag.active {
+     background: var(--primary-red);
+     color: white;
+     border-color: var(--primary-red);
+ }

@@ -1,0 +1,47 @@
+:root {
+            --primary-red: #ff4d4d;
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
+        }
+
+        body { background-color: #f7e1e4; font-family: 'Segoe UI', sans-serif; color: var(--text-dark); }
+
+        /* Header */
+        .legal-header {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        .brand-logo { font-size: 1.2rem; text-decoration: none; margin-bottom: 10px; display: inline-block; }
+        .logo-bold { font-weight: 800; color: #333; }
+        .logo-light { font-weight: 300; color: #555; }
+
+        /* Content Layout */
+        .content-wrapper { padding: 60px 0; }
+        
+        .legal-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            line-height: 1.8;
+        }
+
+        h2 { font-weight: 800; margin-top: 30px; font-size: 1.5rem; color: var(--primary-red); }
+        p { color: var(--text-muted); }
+
+        /* Summary Sidebar */
+        .summary-box {
+            background: #fff5f5;
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary-red);
+            position: sticky;
+            top: 20px;
+        }
+        .summary-box h5 { font-weight: 800; margin-bottom: 15px; }
+        .summary-item { font-size: 0.9rem; margin-bottom: 12px; display: flex; gap: 10px; }
+        .summary-item i { color: var(--primary-red); margin-top: 4px; }
+
+        .back-link { text-decoration: none; color: var(--primary-red); font-weight: 600; }

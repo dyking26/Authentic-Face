@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Authentic-Face | Create Account</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="signup-card">
+        <a href="index.html" class="brand-logo">
+            <span class="logo-bold">AUTHENTIC</span><span class="logo-light">FACE</span>
+        </a>
+
+        <h3 class="text-center fw-bold mb-4">Create Account</h3>
+
+        <form action="dashboard.html">
+            <div class="photo-upload-container">
+                <div class="profile-placeholder" onclick="document.getElementById('fileInput').click()">
+                    <i class="fa fa-camera" id="cameraIcon"></i>
+                    <img id="previewImg" src="#" alt="Preview">
+                    <div class="upload-plus"><i class="fa fa-plus"></i></div>
+                </div>
+                <input type="file" id="fileInput" hidden accept="image/*" onchange="previewFile()">
+                <label class="form-label">Upload your authentic face</label>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="Wisdom" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Age</label>
+                    <input type="number" class="form-control" placeholder="21" min="18" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="Create a strong password" required>
+            </div>
+
+            <button type="submit" class="btn-signup">Verify & Join</button>
+
+            <p class="terms-text">
+                By signing up, you agree to our <a href="terms.html" class="text-danger">Terms</a> and <a
+                    href="privacy.html" class="text-danger">Privacy Policy</a>.
+            </p>
+
+            <p class="text-center mt-3 mb-0 text-muted">
+                Already have an account? <a href="login.html" class="text-danger fw-bold text-decoration-none">Log
+                    In</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        // Simple JS to preview the image when selected
+        function previewFile() {
+            const preview = document.getElementById('previewImg');
+            const file = document.getElementById('fileInput').files[0];
+            const reader = new FileReader();
+            const icon = document.getElementById('cameraIcon');
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+                icon.style.display = 'none';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
+
+</body>
+<script src="dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

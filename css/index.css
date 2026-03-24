@@ -1,0 +1,217 @@
+
+        :root {
+            --primary-red: #ff4d4d;
+            --dark-overlay: rgba(0, 0, 0, 0.6);
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff4d4d, #ff8e8e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            /* Stay on top of everything */
+            transition: opacity 0.8s ease-out, visibility 0.8s;
+        }
+
+        .splash-content {
+            text-align: center;
+            color: white;
+        }
+
+        .logo-animation {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: pulseLogo 2s infinite ease-in-out;
+        }
+
+        .logo-animation img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .brand-name {
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            animation: fadeInText 1s ease-in;
+        }
+
+        /* Modern Loading Bar */
+        .loading-bar {
+            width: 150px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: white;
+            animation: fillBar 2.5s forwards ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes pulseLogo {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes fillBar {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Class to hide the splash */
+        .splash-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Hero Section with Background Image */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(32, 32, 32, 0.2), rgba(32, 32, 32, 0.6)),
+                url(..//img/authentic\ homepage.jpg) no-repeat center/cover;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        .logo-bold {
+            font-weight: 800;
+        }
+
+        .logo-light {
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn-main {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            background-color: #e63939;
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 13px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-left: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            font-weight: 700;
+        }
+
+        /* Navbar Overlay */
+        .navbar-custom {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+    

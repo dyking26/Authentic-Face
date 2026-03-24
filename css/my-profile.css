@@ -1,0 +1,109 @@
+:root {
+            --primary-red: #ff4d4d;
+            --verify-blue: #007bff;
+            --bg-light: #f8f9fa;
+        }
+
+        body { background-color: var(--bg-light); padding-bottom: 80px; font-family: 'Segoe UI', sans-serif; }
+
+        /* Profile Header with Gradient */
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary-red), #ff8e8e);
+            height: 100px;
+            position: relative;
+            border-radius: 0 0 40px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .settings-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        /* Avatar Styling */
+        .avatar-section {
+            position: relative;
+            margin-top: 130px; /* Pulls avatar up into the header */
+            z-index: 10;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .badge-verified {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: var(--verify-blue);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 3px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* Stats Card */
+        .stats-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .stat-val { font-weight: 800; font-size: 1.2rem; color: #333; display: block; }
+        .stat-label { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+
+        /* Photo Grid */
+        .photo-grid { margin-top: 30px; }
+        .photo-slot {
+            aspect-ratio: 1 / 1;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .photo-slot img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-slot:hover { transform: scale(1.02); }
+        .add-photo { border: 2px dashed #ccc; background: #fff; color: #ccc; }
+
+        /* Bottom Nav (Consistent across app) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0; width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            z-index: 1000;
+        }
+        .nav-item { color: #ccc; font-size: 1.5rem; transition: 0.3s; }
+        .nav-item.active { color: var(--primary-red); }
+
+        /* Edit Bio Section */
+        .bio-section {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
