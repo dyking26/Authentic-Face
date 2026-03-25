@@ -2,122 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Messages | Authentic-Face</title>
-    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/messaage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel="stylesheet" href="css/messaage.css">
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
 
-<div class="main-wrapper">
-    <div class="chat-sidebar">
-        <div class="sidebar-header">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <a href="dashboard.html" class="text-dark"><i class="fa fa-chevron-left"></i></a>
-                <h5 class="fw-bold mb-0">Messages</h5>
-                <a href="settings.html"><i class="fa fa-sliders text-muted"></i></a>
-            </div>
-            <input type="text" class="form-control border-0 bg-light" placeholder="Search matches..." style="border-radius: 10px;">
-        </div>
-        
-        <div class="chat-list">
-            <a href="#" class="chat-item active">
-                <img src="img/profile girl 1.jpg" class="avatar">
-                <div class="chat-info">
-                    <h6>Jenny</h6>
-                    <small>You: That sounds amazing! Let's...</small>
-                </div>
-            </a>
-            <a href="#" class="chat-item">
-                <img src="img/profile girl 2.jpg" class="avatar">
-                <div class="chat-info">
-                    <h6>Adannaya</h6>
-                    <small class="fw-bold text-danger">New message · 2m ago</small>
-                </div>
-            </a>
+    <header class="messages-header sticky-top d-flex justify-content-between align-items-center px-3 py-3">
+        <h4 class="fw-bold mb-0">Messages</h4>
+        <a href="settings.html"><button class="btn btn-light rounded-circle"><i class="fa-solid fa-sliders"></i></button></a>
+    </header>
 
-             <a href="#" class="chat-item">
-                <img src="img/profile girl 3.jpg" class="avatar">
-                <div class="chat-info">
-                    <h6>Loveth</h6>
-                    <small class="fw-bold text-danger">New message · 3m ago</small>
-                </div>
-            </a>
-
-             <a href="#" class="chat-item">
-                <img src="img/profile girl 4.jpg" class="avatar">
-                <div class="chat-info">
-                    <h6>Joy</h6>
-                    <small class="fw-bold text-danger">New message · 5m ago</small>
-                </div>
-            </a>
-        </div>
+    <div class="search-container">
+        <input type="text" class="form-control search-input" placeholder="Search 12 matches...">
     </div>
 
-    <div class="chat-window">
-        <div class="chat-header">
-            <div class="d-flex align-items-center">
-                <img src="img/profile girl 1.jpg" class="avatar" style="width: 40px; height: 40px;">
-                <div class="jenny"><a href="user-jenny.html"><h6 class="mb-0 fw-bold">Jenny</h6>
-                    <small class="text-success">● Online</small></a>
-                    
+    <div class="section-title px-3 pt-2">
+        <h6 class="text-uppercase text-muted small fw-bold">New Matches</h6>
+    </div>
+    <div class="matches-scroll">
+        <div class="match-item">
+            <div class="match-avatar-wrapper">
+                <img src="img/profile girl 2.jpg" class="match-avatar" alt="User">
+            </div>
+            <span class="small fw-bold">Adannaya</span>
+        </div>
+        <div class="match-item">
+            <div class="match-avatar-wrapper">
+                <img src="img/profile girl 5.jpg" class="match-avatar" alt="User">
+            </div>
+            <span class="small fw-bold">Joy</span>
+        </div>
+        </div>
+
+    <hr class="mx-3 my-2 text-muted opacity-25">
+
+    <div class="chat-list pb-5 mb-5">
+        <a href="chat.html" class="chat-item">
+            <div class="position-relative">
+                <img src="img/profile girl 1.jpg" class="chat-avatar-main" alt="Jenny">
+                <span class="online-indicator"></span>
+            </div>
+            <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0 fw-bold">Jenny</h6>
+                    <small class="text-muted">2m ago</small>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="mb-0 msg-preview"><span class="text-danger fw-bold">New message ·</span> That sounds amazing!</p>
+                    <span class="unread-badge">1</span>
                 </div>
             </div>
-            <div class="text-muted">
-                <i class="fa fa-video me-3"></i>
-                <i class="fa fa-phone me-3"></i>
-                <button onclick="openReport()" style="background:none; border:none; cursor:pointer;">
-                <i class="fa-solid fa-ellipsis-vertical text-muted"></i>
+        </a>
+
+        <a href="chat.html" class="chat-item">
+            <div class="position-relative">
+                <img src="img/profile girl 3.jpg" class="chat-avatar-main" alt="Loveth">
             </div>
-        </div>
-
-        <div class="messages-container">
-            <div class="msg msg-received">Hey Wisdom! I saw your profile and loved your photography shots. 📸</div>
-            <div class="msg msg-sent">Thanks Jenny! That means a lot coming from you. I saw you're into tennis?</div>
-            <div class="msg msg-received">Yes! I play every weekend at the club. We should hit some balls sometime.</div>
-            <div class="msg msg-sent">That sounds amazing! Let's do it. Are you free this Saturday?</div>
-        </div>
-
-        <div class="chat-input-area">
-            <button class="btn text-muted"><i class="fa fa-plus"></i></button>
-            <input type="text" class="chat-input" placeholder="Type a message...">
-            <button class="send-btn"><i class="fa fa-paper-plane"></i></button>
-        </div>
+            <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0 fw-bold">Loveth</h6>
+                    <small class="text-muted">1h ago</small>
+                </div>
+                <p class="mb-0 msg-preview">How was your day dear?</p>
+            </div>
+        <a href="chat.html" class="chat-item">
+            <div class="position-relative">
+                <img src="img/profile girl 6.jpg" class="chat-avatar-main" alt="Loveth">
+            </div>
+            <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0 fw-bold">jasmine</h6>
+                    <small class="text-muted">1h ago</small>
+                </div>
+                <p class="mb-0 msg-preview">Hello!!!?</p>
+            </div>
+        <a href="chat.html" class="chat-item">
+            <div class="position-relative">
+                <img src="img/profile girl 8.jpg" class="chat-avatar-main" alt="Loveth">
+            </div>
+            <div class="ms-3 flex-grow-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0 fw-bold">Amaka</h6>
+                    <small class="text-muted">1h ago</small>
+                </div>
+                <p class="mb-0 msg-preview">Hey, you good?</p>
+            </div>
+        </a>
     </div>
-</div>
 
-<div id="reportDrawer" class="report-overlay" onclick="closeReport()">
-    <div class="report-content" onclick="event.stopPropagation()">
-        <div class="drawer-line"></div>
-        <h6 class="fw-bold text-center mb-4">Chat Settings</h6>
-        
-        <div class="list-group list-group-flush">
-            <button class="list-group-item list-group-item-action border-0 py-3" onclick="alert('Unmatched!')">
-                <i class="fa-solid fa-heart-crack me-2 text-muted"></i> Unmatch Olivia
-            </button>
-            <button class="list-group-item list-group-item-action border-0 py-3 text-danger" onclick="alert('Reported!')">
-                <i class="fa-solid fa-flag me-2"></i> Report & Block
-            </button>
-        </div>
-        
-        <button class="btn btn-light w-100 mt-3 rounded-pill" onclick="closeReport()">Cancel</button>
-    </div>
-</div>
+    <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-fire"></i></a>
+        <a href="likes.html" class="nav-link"><i class="fa-solid fa-heart"></i></a>
+        <a href="messages.html" class="nav-link active"><i class="fa-solid fa-comment"></i></a>
+        <a href="my-profile.html" class="nav-link"><i class="fa-solid fa-user"></i></a>
+    </nav>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    function openReport() {
-        // Find the drawer by its ID and make it flex (visible)
-        document.getElementById('reportDrawer').style.display = 'flex';
-    }
-
-    function closeReport() {
-        // Find the drawer and hide it again
-        document.getElementById('reportDrawer').style.display = 'none';
-    }
-</script>
 </html>

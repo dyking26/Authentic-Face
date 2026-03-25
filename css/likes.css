@@ -1,0 +1,65 @@
+        :root { --primary-red: #ff4d4d; }
+        body { background-color: #fff; padding-bottom: 80px; }
+
+        /* The Blur Effect */
+        .blur-img {
+            filter: blur(12px);
+            transform: scale(1.1); /* Prevents white edges from blur */
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .like-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: #eee;
+        }
+
+        /* Overlay Text/Icon */
+        .lock-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.1);
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Paywall Footer */
+        .paywall-float {
+            position: fixed;
+            bottom: 80px; /* Sits above bottom nav */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border: none;
+            color: black;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 50px;
+        }
+        
+        /* Bottom Nav Fix */
+        .mobile-bottom-nav {
+            position: fixed; bottom: 0; width: 100%; background: white;
+            border-top: 1px solid #eee; display: flex;
+            justify-content: space-around; padding: 15px 0; z-index: 1000;
+        }
+        .nav-link { color: #ccc; font-size: 1.4rem; }
+        .nav-link.active { color: var(--primary-red); }

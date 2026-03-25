@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Edit Profile | Authentic-Face</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/edit-profile.css">
+    <link rel="stylesheet" href="css/global.css">
 
 </head>
+
 <body>
 
     <header class="edit-header">
@@ -18,10 +22,11 @@
     </header>
 
     <div class="container px-3">
-        
+
         <div class="section-card">
             <h6 class="section-title">About Me</h6>
-            <textarea class="form-control border-0 p-0" rows="3" placeholder="Tell your story..." maxlength="200" id="bioInput">Love coffee, hiking, and designing things that actually work.</textarea>
+            <textarea class="form-control border-0 p-0" rows="3" placeholder="Tell your story..." maxlength="200"
+                id="bioInput">Love coffee, hiking, and designing things that actually work.</textarea>
             <div class="text-end mt-2">
                 <small class="text-muted" id="charCount">0/200</small>
             </div>
@@ -37,7 +42,7 @@
                 <label class="small text-muted">Company</label>
                 <input type="text" class="form-control form-control-custom" placeholder="Add Company">
             </div>
-             <div>
+            <div>
                 <label class="small text-muted">Education</label>
                 <input type="text" class="form-control form-control-custom" placeholder="Add School">
             </div>
@@ -68,11 +73,18 @@
 
     </div>
 
+    <div class="mobile-bottom-nav d-md-none">
+        <a href="dashboard.html" class="nav-item"><i class="fa fa-fire"></i></a>
+        <a href="likes.html" class="nav-item"><i class="fa fa-heart"></i></a>
+        <a href="message.html" class="nav-item"><i class="fa fa-comment"></i></a>
+        <a href="my-profile.html" class="nav-item"><i class="fa fa-user"></i></a>
+    </div>
+
     <script>
         // Character counter logic
         const bio = document.getElementById('bioInput');
         const count = document.getElementById('charCount');
-        
+
         bio.addEventListener('input', () => {
             count.innerText = `${bio.value.length}/200`;
         });
@@ -92,4 +104,5 @@
     </script>
 
 </body>
+
 </html>

@@ -1,138 +1,132 @@
-:root {
+        :root {
             --primary-red: #ff4d4d;
-            --chat-bg: #f4f7f6;
+            --soft-gray: #f8f9fa;
         }
 
-        body, html { height: 100%; margin: 0; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+        body {
+            background-color: #fff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-        .main-wrapper { display: flex; height: 100vh; }
+        /* Header Styling */
+        .messages-header {
+            border-bottom: 1px solid #eee;
+            background: #fff;
+            z-index: 1000;
+        }
 
-        /* Left Sidebar - Chat List */
-        .chat-sidebar {
-            width: 350px;
-            background: white;
-            border-right: 1px solid #eee;
+        /* Search Bar */
+        .search-container {
+            padding: 10px 15px;
+        }
+        .search-input {
+            background-color: var(--soft-gray);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 15px;
+        }
+
+        /* New Matches Horizontal Scroll */
+        .matches-scroll {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 15px;
+            white-space: nowrap;
+        }
+        .matches-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .match-item {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 70px;
         }
-        .sidebar-header { padding: 20px; border-bottom: 1px solid #f8f9fa; }
-        .chat-list { overflow-y: auto; flex-grow: 1; }
-        
+        .match-avatar-wrapper {
+            position: relative;
+            width: 65px;
+            height: 65px;
+            margin-bottom: 5px;
+        }
+        .match-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-red);
+            padding: 2px;
+        }
+
+        /* Conversation List */
+        .chat-list {
+            margin-top: 10px;
+        }
         .chat-item {
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: 0.2s;
-            border-bottom: 1px solid #fcfcfc;
+            padding: 15px;
             text-decoration: none;
             color: inherit;
+            transition: background 0.2s;
+            border-bottom: 1px solid #f1f1f1;
         }
-        .chat-item:hover { background: #fff5f5; }
-        .chat-item.active { background: #fff5f5; border-left: 4px solid var(--primary-red); }
-
-        .avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 15px; }
-        .chat-info h6 { margin: 0; font-weight: 700; }
-        .chat-info small { color: #888; }
-
-        /* Right Side - Active Conversation */
-        .chat-window { flex-grow: 1; display: flex; flex-direction: column; background: var(--chat-bg); }
-        
-        .chat-header {
-            padding: 15px 25px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            z-index: 10;
+        .chat-item:active {
+            background-color: var(--soft-gray);
         }
-
-        .messages-container {
-            flex-grow: 1;
-            padding: 25px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        /* Message Bubbles */
-        .msg { max-width: 70%; padding: 12px 18px; border-radius: 20px; font-size: 15px; position: relative; }
-        
-        .msg-received {
-            align-self: flex-start;
-            background: white;
-            color: #333;
-            border-bottom-left-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-
-        .msg-sent {
-            align-self: flex-end;
-            background: var(--primary-red);
-            color: white;
-            border-bottom-right-radius: 5px;
-        }
-
-        /* Input Area */
-        .chat-input-area {
-            padding: 20px;
-            background: white;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .chat-input {
-            flex-grow: 1;
-            border: none;
-            background: #f0f2f5;
-            padding: 12px 20px;
-            border-radius: 30px;
-            outline: none;
-        }
-        .send-btn {
-            background: var(--primary-red);
-            color: white;
-            border: none;
-            width: 45px;
-            height: 45px;
+        .chat-avatar-main {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
+            object-fit: cover;
+        }
+        .online-indicator {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 14px;
+            height: 14px;
+            background-color: #2ecc71;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+        .msg-preview {
+            font-size: 0.9rem;
+            color: #6c757d;
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .unread-badge {
+            background-color: var(--primary-red);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: 0.2s;
+            border-radius: 50%;
         }
-        .send-btn:hover { transform: scale(1.1); }
 
-        .jenny a{text-decoration: none;
-        color: black;}
-
-        /* Dark background that covers the whole screen */
-.report-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10000;
-    display: none; /* SHIPS HIDDEN */
-    align-items: flex-end;
-}
-
-/* The white box that slides up */
-.report-content {
-    background: white;
-    width: 100%;
-    padding: 20px;
-    border-radius: 25px 25px 0 0;
-    animation: slideUp 0.3s ease-out;
-}
-
-.drawer-line {
-    width: 40px; height: 4px; background: #eee;
-    margin: 0 auto 20px; border-radius: 10px;
-}
-
-@keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-}
+        /* Bottom Nav Fix */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .nav-link {
+            color: #ccc;
+            font-size: 1.4rem;
+        }
+        .nav-link.active {
+            color: var(--primary-red);
+        }
