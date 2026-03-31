@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dating Dashboard</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/global.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar d-none d-md-block">
+                <div class="active-user-profile">
+                    <img src="img/dyking snow.jpeg" class="match-circle" alt="match">
+                    <a href="active-user-profile.html">
+                        <h5>Dyking</h5>
+                    </a>
+                </div>
+
+                <!-- for matches -->
+                <h5 class="fw-bold mb-4">Matches</h5>
+                <div class="d-flex gap-2 mb-4 overflow-auto">
+                    <img src="img/profile girl 5.jpg" class="match-circle">
+                    <img src="img/profile girl 6.jpg" class="match-circle">
+                    <img src="img/profile girl 7.jpg" class="match-circle">
+                    <img src="img/profile girl 8.jpg" class="match-circle">
+                </div>
+
+                <!-- for messages -->
+                <h5 class="fw-bold">Messages</h5>
+                <div class="list-group list-group-flush">
+                    <a href="message.html" class="list-group-item list-group-item-action py-3">
+                        <div class="chats">
+                            <img src="img/profile girl 1.jpg" class="avatar">
+                            <div><strong>Jenny</strong><br><small class="text-muted">Hey! How are you?</small></div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action py-3">
+                        <div class="chats">
+                            <img src="img/profile girl 2.jpg" class="avatar">
+                            <div><strong>Adannaya</strong><br><small class="text-muted">Sent a photo</small></div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action py-3">
+                        <div class="chats">
+                            <img src="img/profile girl 3.jpg" class="avatar">
+                            <div><strong>Loveth</strong><br><small class="text-muted">How was your day dear?</small>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action py-3">
+                        <div class="chats">
+                            <img src="img/profile girl 4.jpg" class="avatar">
+                            <div><strong>Joy</strong><br><small class="text-muted">Hey Dyking, you wana hang out</small>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action py-3">
+                        <div class="chats">
+                            <img src="img/profile girl 9.jpg" class="avatar">
+                            <div><strong>Gift</strong><br><small class="text-muted">Hey Dyking, you wana hang
+                                    out</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- for the matches cards -->
+            <div class="col-12 col-md-9 discovery-container">
+                <div id="mainCard" class="profile-card">
+                    <div id="badge-like" class="swipe-badge badge-like">LIKE</div>
+                    <div id="badge-nope" class="swipe-badge badge-nope">NOPE</div>
+                    <div id="badge-super" class="swipe-badge badge-super">SUPER LIKE</div>
+
+                    <div class="header-actions">
+                        <button onclick="openReport()"
+                            style="background:none; border:none; color:white; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+
+                    <img id="user-img" src="img/profile 1b.jpg" class="profile-img" alt="Profile">
+
+                    <div class="profile-info-overlay">
+                        <span class="status-badge">Active</span>
+                        <h2 id="user-name" class="mb-0">Olivia, 27</h2>
+                        <p id="user-dist"><i class="fa-solid fa-location-dot"></i> 5 km away</p>
+                    </div>
+
+                    <div class="action-row">
+                        <button class="btn-circle btn-reject" onclick="swipeLeft()"><i class="fa fa-xmark"></i></button>
+                        <a id="profile-link" href="user-olivia.html" class="btn-circle btn-view"><i
+                                class="fa fa-user"></i></a>
+                        <a href="mailto:?body=Check out this profile!" class="btn-circle btn-share"><i
+                                class="fa fa-share-nodes"></i></a>
+                        <form action="match-overlay.html"><button class="btn-circle btn-like" onclick="swipeRight()"><i
+                                    class="fa fa-heart"></i></button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- for the report drawer -->
+    <div id="reportDrawer" class="drawer-overlay" onclick="closeReport()">
+        <div class="drawer-content" onclick="event.stopPropagation()">
+            <div class="drawer-handle"></div>
+            <h5 class="fw-bold text-center">Report User?</h5>
+            <div class="list-group list-group-flush">
+                <button class="list-group-item list-group-item-action" onclick="finishReport()">Inappropriate
+                    Photos</button>
+                <button class="list-group-item list-group-item-action" onclick="finishReport()">Fake Profile /
+                    Catfish</button>
+                <button class="list-group-item list-group-item-action" onclick="finishReport()">Harassment</button>
+            </div>
+            <button class="btn btn-light w-100 mt-3" onclick="closeReport()">Cancel</button>
+        </div>
+    </div>
+
+    <div class="mobile-bottom-nav d-md-none">
+        <a href="dashboard.html" class="nav-item"><i class="fa fa-fire"></i></a>
+        <a href="likes.html" class="nav-item"><i class="fa fa-heart"></i></a>
+        <a href="message.html" class="nav-item"><i class="fa fa-comment"></i></a>
+        <a href="my-profile.html" class="nav-item"><i class="fa fa-user"></i></a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script>
+        // 1. Data Array (Add all your profiles here)
+        const profiles = [
+            { name: "Olivia", age: 27, dist: "5 km away", img: "img/profile 1b.jpg", link: "user-olivia.html" },
+            { name: "Loveth", age: 24, dist: "2 km away", img: "img/profile girl 3.jpg", link: "user-loveth.html" },
+            { name: "Joy", age: 25, dist: "10 km away", img: "img/profile girl 4.jpg", link: "user-joy.html" },
+            { name: "Adannaya", age: 26, dist: "8 km away", img: "img/profile girl 2.jpg", link: "user-adannaya.html" }
+        ];
+
+        let currentIndex = 0;
+        const mainCard = document.getElementById('mainCard');
+        const likeBadge = document.getElementById('badge-like');
+        const nopeBadge = document.getElementById('badge-nope');
+        const superBadge = document.getElementById('badge-super');
+        const hammer = new Hammer(mainCard, {
+            recognizer: [
+                [Hammer.pan, { direction: Hammer.DIRECTION_HORIZONTAL }]
+            ]
+        });
+
+        // 2. Swiping Logic
+        hammer.on('pan', (event) => {
+            mainCard.style.transition = 'none';
+            let rotation = event.deltaX / 20;
+
+            // Apply BOTH X and Y movement now
+            mainCard.style.transform = `translateX(${event.deltaX}px) translateY(${event.deltaY}px) rotate(${rotation}deg)`;
+
+            // 1. Reset all badges first
+            likeBadge.style.opacity = 0;
+            nopeBadge.style.opacity = 0;
+            superBadge.style.display = 'none';
+
+            // 2. Logic for which badge to show
+            if (event.deltaY < -100 && Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+                // SWIPING UP (Super Like)
+                superBadge.style.display = 'block';
+                superBadge.style.opacity = Math.min(Math.abs(event.deltaY) / 150, 1);
+            } else if (event.deltaX > 50) {
+                // SWIPING RIGHT (Like)
+                likeBadge.style.opacity = Math.min(event.deltaX / 150, 1);
+            } else if (event.deltaX < -50) {
+                // SWIPING LEFT (Nope)
+                nopeBadge.style.opacity = Math.min(Math.abs(event.deltaX) / 150, 1);
+            }
+        });
+
+        hammer.on('panend', (event) => {
+            // Check for Super Like first (Upward swipe)
+            if (event.deltaY < -150 && Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+                swipeUp();
+            }
+            // Check for Right Swipe
+            else if (event.deltaX > 150) {
+                swipeRight();
+            }
+            // Check for Left Swipe
+            else if (event.deltaX < -150) {
+                swipeLeft();
+            }
+            // Otherwise, snap back
+            else {
+                resetCard();
+            }
+        });
+
+        function swipeUp() {
+            mainCard.style.transition = '0.5s';
+            // Shoot the card off the top of the screen
+            mainCard.style.transform = 'translateY(-1000px) rotate(0deg)';
+            setTimeout(() => {
+                alert("Super Like Sent!");
+                loadNextUser();
+            }, 300);
+        }
+
+
+        // This tells Hammer to completely ignore Up and Down swipes
+        hammer.get('pan').set({
+            direction: Hammer.DIRECTION_HORIZONTAL_ALL,
+            threshold: 10 // Only start moving after 10px of sliding to avoid accidental jitters
+
+        function swipeRight() {
+            mainCard.style.transition = '0.5s';
+            mainCard.style.transform = 'translateX(1000px) rotate(30deg)';
+            setTimeout(loadNextUser, 300);
+        }
+
+        function swipeLeft() {
+                mainCard.style.transition = '0.5s';
+                mainCard.style.transform = 'translateX(-1000px) rotate(-30deg)';
+                setTimeout(loadNextUser, 300);
+            }
+
+      function resetCard() {
+                mainCard.style.transition = '0.3s';
+                mainCard.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+                likeBadge.style.opacity = 0;
+                nopeBadge.style.opacity = 0;
+                superBadge.style.display = 'none'; // Hide super like
+            }
+
+        // 3. The "Engine" - Loads new data into the same card
+        function loadNextUser() {
+                currentIndex++;
+                if (currentIndex >= profiles.length) {
+                    alert("No more profiles near you!");
+                    window.location.href = 'empty-discovery.html';
+                    return;
+                }
+
+                const next = profiles[currentIndex];
+
+                // Change the UI
+                document.getElementById('user-img').src = next.img;
+                document.getElementById('user-name').innerText = `${next.name}, ${next.age}`;
+                document.getElementById('user-dist').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${next.dist}`;
+                document.getElementById('profile-link').href = next.link;
+
+                // Instantly move card back to center (hidden) then fade in
+                mainCard.style.transition = 'none';
+                mainCard.style.transform = 'translateX(0) translateY(0) rotate(0) scale(0.9)';
+                mainCard.style.opacity = '0';
+                likeBadge.style.opacity = 0;
+                nopeBadge.style.opacity = 0;
+
+                setTimeout(() => {
+                    mainCard.style.transition = '0.4s ease-out';
+                    mainCard.style.transform = 'scale(1)';
+                    mainCard.style.opacity = '1';
+                }, 50);
+            }
+
+        // 4. Report Functions
+        function openReport() { document.getElementById('reportDrawer').style.display = 'flex'; }
+        function closeReport() { document.getElementById('reportDrawer').style.display = 'none'; }
+        function finishReport() { alert("Reported successfully."); closeReport(); }
+
+        // Prevents the background page from scrolling while you are swiping the card
+        document.addEventListener('touchmove', function (e) {
+                if (e.target.closest('#mainCard')) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+
+        // This prevents the "browser window" from moving when you drag the card
+        document.getElementById('mainCard').addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, { passive: false });
+
+    </script>
+</body>
+<script src="dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
