@@ -1,112 +1,194 @@
  :root {
-            --primary-red: #ff4d4d;
-            --glass-bg: rgba(255, 255, 255, 0.9);
-        }
+     --primary-red: #ff4d4d;
+     --glass-bg: rgba(255, 255, 255, 0.9);
+ }
 
-        body { background-color: #f7e1e4; font-family: 'Segoe UI', sans-serif; }
+ body {
+     background-color: #f7e1e4;
+     font-family: 'Segoe UI', sans-serif;
+ }
 
-        .profile-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            min-height: 100vh;
-            position: relative;
-            padding-bottom: 100px; /* Space for fixed buttons */
-        }
+ .profile-container {
+     max-width: 500px;
+     margin: 0 auto;
+     background: white;
+     min-height: 100vh;
+     position: relative;
+     padding-bottom: 100px;
+     /* Space for fixed buttons */
+ }
 
-        /* Image Carousel Styling */
-        .carousel-item img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-        }
+ /* Image Carousel Styling */
+ .carousel-item img {
+     width: 100%;
+     height: 600px;
+     object-fit: cover;
+ }
 
-        /* Custom Carousel Indicators (Bars) */
-        .carousel-indicators [data-bs-target] {
-            height: 4px;
-            border-radius: 2px;
-            background-color: rgba(255,255,255,0.5);
-        }
-        .carousel-indicators .active { background-color: white; }
+ /* Custom Carousel Indicators (Bars) */
+ .carousel-indicators [data-bs-target] {
+     height: 4px;
+     border-radius: 2px;
+     background-color: rgba(255, 255, 255, 0.5);
+ }
 
-        .back-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 100;
-            background: rgba(0,0,0,0.3);
-            color: white;
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            text-decoration: none;
-            backdrop-filter: blur(5px);
-        }
+ .carousel-indicators .active {
+     background-color: white;
+ }
 
-        /* Profile Details Section */
-        .profile-content {
-            padding: 25px;
-            margin-top: -30px;
-            background: white;
-            border-radius: 30px 30px 0 0;
-            position: relative;
-            z-index: 10;
-        }
+ .back-btn {
+     position: absolute;
+     top: 20px;
+     left: 20px;
+     z-index: 100;
+     background: rgba(0, 0, 0, 0.3);
+     color: white;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     backdrop-filter: blur(5px);
+ }
 
-        .name-age { font-size: 2rem; font-weight: 800; color: #222; }
-        .verified-badge { color: #007bff; font-size: 1.2rem; margin-left: 5px; }
-        .location-tag { color: #888; font-size: 0.95rem; margin-bottom: 20px; }
+ /* Profile Details Section */
+ .profile-content {
+     padding: 25px;
+     margin-top: -30px;
+     background: white;
+     border-radius: 30px 30px 0 0;
+     position: relative;
+     z-index: 10;
+ }
 
-        .section-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--primary-red);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+ .name-age {
+     font-size: 2rem;
+     font-weight: 800;
+     color: #222;
+ }
 
-        .bio-text { color: #555; line-height: 1.6; font-size: 1.05rem; }
+ .verified-badge {
+     color: #007bff;
+     font-size: 1.2rem;
+     margin-left: 5px;
+ }
 
-        /* Interest Pills */
-        .interest-badge {
-            display: inline-block;
-            background: #fff5f5;
-            color: var(--primary-red);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 0 8px 10px 0;
-            border: 1px solid #ffebeb;
-        }
+ .location-tag {
+     color: #888;
+     font-size: 0.95rem;
+     margin-bottom: 20px;
+ }
 
-        /* Floating Action Bar */
-        .action-bar-fixed {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            border-radius: 50px;
-            padding: 12px;
-            display: flex;
-            justify-content: space-evenly;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
+ .section-title {
+     font-size: 0.85rem;
+     text-transform: uppercase;
+     font-weight: 700;
+     color: var(--primary-red);
+     margin-top: 25px;
+     margin-bottom: 10px;
+     letter-spacing: 1px;
+ }
 
-        .circle-btn {
-            width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            border: none; font-size: 22px; transition: 0.3s;
-        }
-        .btn-dislike { background: white; color: #888; border: 1px solid #eee; }
-        .btn-like { background: var(--primary-red); color: white; box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4); }
-        .btn-star { background: white; color: #f1c40f; border: 1px solid #eee; }
+ .bio-text {
+     color: #555;
+     line-height: 1.6;
+     font-size: 1.05rem;
+ }
 
-        .circle-btn:hover { transform: scale(1.1); }
+ /* Interest Pills */
+ .interest-badge {
+     display: inline-block;
+     background: #fff5f5;
+     color: var(--primary-red);
+     padding: 6px 16px;
+     border-radius: 20px;
+     font-size: 0.9rem;
+     font-weight: 600;
+     margin: 0 8px 10px 0;
+     border: 1px solid #ffebeb;
+ }
+
+ /* Floating Action Bar */
+ .action-bar-fixed {
+     position: fixed;
+     bottom: 30px;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 90%;
+     max-width: 400px;
+     background: var(--glass-bg);
+     backdrop-filter: blur(15px);
+     border-radius: 50px;
+     padding: 12px;
+     display: flex;
+     justify-content: space-evenly;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+     z-index: 1000;
+ }
+
+ .circle-btn {
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border: none;
+     font-size: 22px;
+     transition: 0.3s;
+ }
+
+ .btn-dislike {
+     background: white;
+     color: #888;
+     border: 1px solid #eee;
+ }
+
+ .btn-like {
+     background: var(--primary-red);
+     color: white;
+     box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+ }
+
+ .btn-star {
+     background: white;
+     color: #f1c40f;
+     border: 1px solid #eee;
+ }
+
+ .circle-btn:hover {
+     transform: scale(1.1);
+ }
+
+ /* Chat Button Styling */
+ .btn-chat {
+     background: white;
+     color: #9b59b6;
+     /* Professional Purple */
+     border: 1px solid #eee;
+     text-decoration: none;
+     /* Removes underline from the <a> tag */
+ }
+
+ /* Ensure the floating bar can fit 4 buttons comfortably */
+ .action-bar-fixed {
+     max-width: 450px;
+     /* Slightly wider to accommodate 4 buttons */
+     padding: 10px 5px;
+ }
+
+ .circle-btn {
+     width: 55px;
+     /* Sized down slightly from 60px to prevent crowding on small screens */
+     height: 55px;
+ }
+
+ @media (max-width: 380px) {
+     .circle-btn {
+         width: 48px;
+         height: 48px;
+         font-size: 18px;
+     }
+ }

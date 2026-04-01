@@ -82,8 +82,6 @@
             <!-- for the matches cards -->
             <div class="col-12 col-md-9 discovery-container">
                 <div id="mainCard" class="profile-card">
-                    <div id="badge-like" class="swipe-badge badge-like">LIKE</div>
-                    <div id="badge-nope" class="swipe-badge badge-nope">NOPE</div>
 
                     <div class="header-actions">
                         <button onclick="openReport()"
@@ -101,13 +99,25 @@
                     </div>
 
                     <div class="action-row">
-                        <button class="btn-circle btn-reject" onclick="swipeLeft()"><i class="fa fa-xmark"></i></button>
-                        <a id="profile-link" href="user-olivia.html" class="btn-circle btn-view"><i
-                                class="fa fa-user"></i></a>
-                        <a href="mailto:?body=Check out this profile!" class="btn-circle btn-share"><i
-                                class="fa fa-share-nodes"></i></a>
-                        <form action="match-overlay.html"><button class="btn-circle btn-like" onclick="swipeRight()"><i
-                                    class="fa fa-heart"></i></button></form>
+                        <button class="btn-circle btn-reject" onclick="swipeLeft()">
+                            <i class="fa fa-xmark"></i>
+                        </button>
+
+                        <button class="btn-circle btn-chat" onclick="openChat()">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </button>
+
+                        <a id="profile-link" href="user-olivia.html" class="btn-circle btn-view">
+                            <i class="fa fa-user"></i>
+                        </a>
+
+                        <a href="mailto:?body=Check out this profile!" class="btn-circle btn-share">
+                            <i class="fa fa-share-nodes"></i>
+                        </a>
+
+                        <button class="btn-circle btn-like" onclick="swipeRight()">
+                            <i class="fa fa-heart"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -131,14 +141,37 @@
         </div>
     </div>
 
-    <div class="mobile-bottom-nav d-md-none">
-        <a href="dashboard.html" class="nav-item"><i class="fa fa-fire"></i></a>
-        <a href="likes.html" class="nav-item"><i class="fa fa-heart"></i></a>
-        <a href="message.html" class="nav-item"><i class="fa fa-comment"></i></a>
-        <a href="my-profile.html" class="nav-item"><i class="fa fa-user"></i></a>
+    <div class="mobile-bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fa fa-fire"></i>
+            <span class="nav-label">Swipe</span>
+        </a>
+
+        <a href="nearby-grid.html" class="nav-item">
+            <i class="fa fa-compass"></i>
+            <span class="nav-label">Explore</span>
+        </a>
+
+        <a href="likes.html" class="nav-item">
+            <div class="icon-wrapper">
+                <i class="fa fa-heart"></i>
+                <span class="notification-dot"></span>
+            </div>
+            <span class="nav-label">Likes</span>
+        </a>
+
+        <a href="message.html" class="nav-item">
+            <i class="fa fa-comment"></i>
+            <span class="nav-label">Chat</span>
+        </a>
+
+        <a href="my-profile.html" class="nav-item">
+            <i class="fa fa-user"></i>
+            <span class="nav-label">Profile</span>
+        </a>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
     <script>
         // 1. Data Array (Add all your profiles here)
         const profiles = [
@@ -154,42 +187,22 @@
         const nopeBadge = document.getElementById('badge-nope');
         const hammer = new Hammer(mainCard);
 
-        // 2. Swiping Logic
-        hammer.on('pan', (event) => {
-            let rotation = event.deltaX / 20;
-            mainCard.style.transition = 'none';
-            mainCard.style.transform = `translateX(${event.deltaX}px) translateY(${event.deltaY}px) rotate(${rotation}deg)`;
 
-            // Feedback Badges
-            if (event.deltaX > 50) {
-                likeBadge.style.opacity = Math.min(event.deltaX / 150, 1);
-                nopeBadge.style.opacity = 0;
-            } else if (event.deltaX < -50) {
-                nopeBadge.style.opacity = Math.min(Math.abs(event.deltaX) / 150, 1);
-                likeBadge.style.opacity = 0;
-            } else {
-                likeBadge.style.opacity = 0;
-                nopeBadge.style.opacity = 0;
-            }
-        });
-
-        hammer.on('panend', (event) => {
-            if (event.deltaX > 150) swipeRight();
-            else if (event.deltaX < -150) swipeLeft();
-            else resetCard();
-        });
 
         function swipeRight() {
-            mainCard.style.transition = '0.5s';
+            mainCard.style.transition = '0.5s ease-in';
             mainCard.style.transform = 'translateX(1000px) rotate(30deg)';
+            mainCard.style.opacity = '0';
             setTimeout(loadNextUser, 300);
         }
 
         function swipeLeft() {
-            mainCard.style.transition = '0.5s';
+            mainCard.style.transition = '0.5s ease-in';
             mainCard.style.transform = 'translateX(-1000px) rotate(-30deg)';
+            mainCard.style.opacity = '0';
             setTimeout(loadNextUser, 300);
         }
+
 
         function resetCard() {
             mainCard.style.transition = '0.3s';
@@ -201,26 +214,25 @@
         // 3. The "Engine" - Loads new data into the same card
         function loadNextUser() {
             currentIndex++;
+
+            // REDIRECT IF NO MORE CARDS
             if (currentIndex >= profiles.length) {
-                alert("No more profiles near you!");
                 window.location.href = 'empty-discovery.html';
                 return;
             }
 
             const next = profiles[currentIndex];
 
-            // Change the UI
+            // Update UI
             document.getElementById('user-img').src = next.img;
             document.getElementById('user-name').innerText = `${next.name}, ${next.age}`;
             document.getElementById('user-dist').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${next.dist}`;
             document.getElementById('profile-link').href = next.link;
 
-            // Instantly move card back to center (hidden) then fade in
+            // Reset Card Position & Animation
             mainCard.style.transition = 'none';
             mainCard.style.transform = 'translateX(0) translateY(0) rotate(0) scale(0.9)';
             mainCard.style.opacity = '0';
-            likeBadge.style.opacity = 0;
-            nopeBadge.style.opacity = 0;
 
             setTimeout(() => {
                 mainCard.style.transition = '0.4s ease-out';
@@ -228,11 +240,17 @@
                 mainCard.style.opacity = '1';
             }, 50);
         }
-
         // 4. Report Functions
         function openReport() { document.getElementById('reportDrawer').style.display = 'flex'; }
         function closeReport() { document.getElementById('reportDrawer').style.display = 'none'; }
         function finishReport() { alert("Reported successfully."); closeReport(); }
+
+        function openChat() {
+            // In a real app, you'd check if (user.isSubscribed)
+            const currentProfile = profiles[currentIndex];
+            // Redirect to a chat page with the user's name as a parameter
+            window.location.href = `message.html?user=${currentProfile.name}`;
+        }
     </script>
 </body>
 <script src="dist/js/bootstrap.bundle.min.js"></script>

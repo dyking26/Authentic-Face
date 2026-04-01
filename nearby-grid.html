@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Discovery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <style>
+        body {
+            background-color: #f7e1e4;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .grid-container {
+            padding: 15px;
+            padding-bottom: 100px;
+        }
+
+        /* Extra padding for nav */
+
+        .user-card-mini {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            height: 220px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .user-card-mini img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+
+        .user-name-small {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .distance-small {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* Filter Bar */
+        .filter-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .btn-filter {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 6px 18px;
+            white-space: nowrap;
+            color: #666;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .btn-filter.active {
+            background: #ff4d4d;
+            color: white;
+            border-color: #ff4d4d;
+        }
+
+        .lock-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            z-index: 5;
+            backdrop-filter: blur(1px);
+        }
+
+        /* --- MOBILE BOTTOM NAV STYLING --- */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: #ccc;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-item.active {
+            color: #ff4d4d;
+        }
+
+        /* ---------------------------------- */
+    </style>
+</head>
+
+<body>
+
+    <div class="container grid-container">
+        <h4 class="fw-bold mb-3 mt-2">People Nearby</h4>
+
+        <div class="filter-bar d-flex gap-2 mb-4 overflow-auto pb-2">
+            <button class="btn btn-sm btn-filter active" onclick="filterUsers('all', this)">All</button>
+            <button class="btn btn-sm btn-filter" onclick="filterUsers('age', this)">Youngest</button>
+            <button class="btn btn-sm btn-filter" onclick="filterUsers('dist', this)">Closest</button>
+            <button class="btn btn-sm btn-filter" onclick="filterUsers('verified', this)">Verified</button>
+        </div>
+
+        <div class="row g-3" id="nearbyGrid"></div>
+    </div>
+
+    <div class="mobile-bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fa fa-fire"></i>
+            <span class="nav-label">Swipe</span>
+        </a>
+
+        <a href="nearby-grid.html" class="nav-item">
+            <i class="fa fa-compass"></i>
+            <span class="nav-label">Explore</span>
+        </a>
+
+        <a href="likes.html" class="nav-item">
+            <div class="icon-wrapper">
+                <i class="fa fa-heart"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <span class="nav-label-like">likes</span>
+        </a>
+
+        <a href="message.html" class="nav-item">
+            <i class="fa fa-comment"></i>
+            <span class="nav-label">Chat</span>
+        </a>
+
+        <a href="my-profile.html" class="nav-item">
+            <i class="fa fa-user"></i>
+            <span class="nav-label">Profile</span>
+        </a>
+
+        <script>
+            const users = [
+                { name: "Olivia", age: 27, dist: 5, img: "img/profile 1b.jpg", verified: true },
+                { name: "Jenny", age: 24, dist: 12, img: "img/profile girl 1.jpg", verified: true },
+                { name: "Loveth", age: 24, dist: 2, img: "img/profile girl 3.jpg", verified: false },
+                { name: "Adannaya", age: 26, dist: 8, img: "img/profile girl 2.jpg", verified: true },
+                { name: "Joy", age: 25, dist: 10, img: "img/profile girl 4.jpg", verified: false },
+                { name: "Gift", age: 22, dist: 3, img: "img/profile girl 9.jpg", verified: true },
+                { name: "Amaka", age: 28, dist: 15, img: "img/profile girl 5.jpg", verified: false },
+                { name: "Blessing", age: 23, dist: 7, img: "img/profile girl 6.jpg", verified: true },
+                { name: "Chioma", age: 21, dist: 4, img: "img/profile girl 7.jpg", verified: true },
+                { name: "Anita", age: 29, dist: 20, img: "img/profile girl 8.jpg", verified: false },
+                { name: "Zainab", age: 24, dist: 6, img: "img/profile girl 1b.jpg", verified: true },
+                { name: "Precious", age: 25, dist: 9, img: "img/profile girl 1c.jpg", verified: false },
+                { name: "Faith", age: 22, dist: 11, img: "img/profile 1b.jpg", verified: true },
+                { name: "Grace", age: 27, dist: 13, img: "img/profile girl 3.jpg", verified: true },
+                { name: "Mercy", age: 26, dist: 1, img: "img/profile girl 4.jpg", verified: false },
+                { name: "Peace", age: 23, dist: 18, img: "img/profile girl 2.jpg", verified: true },
+                { name: "Sophia", age: 24, dist: 5, img: "img/profile girl 9.jpg", verified: true },
+                { name: "Kemi", age: 28, dist: 14, img: "img/profile girl 6.jpg", verified: false },
+                { name: "Ife", age: 25, dist: 22, img: "img/profile girl 7.jpg", verified: true },
+                { name: "Sarah", age: 22, dist: 8, img: "img/profile girl 8.jpg", verified: false }
+            ];
+
+            const isUserSubscribed = false;
+
+            function renderGrid(userList) {
+                const grid = document.getElementById('nearbyGrid');
+                grid.innerHTML = '';
+
+                userList.forEach(user => {
+                    const col = document.createElement('div');
+                    col.className = 'col-6 col-md-4 col-lg-3';
+
+                    const action = isUserSubscribed
+                        ? `location.href='message.html?user=${user.name}'`
+                        : `showSubscriptionModal()`;
+
+                    col.innerHTML = `
+                    <div class="user-card-mini" onclick="${action}" style="cursor: pointer;">
+                        ${!isUserSubscribed ? '<div class="lock-overlay"><i class="fa fa-crown"></i></div>' : ''}
+                        <img src="${user.img}" alt="${user.name}" onerror="this.src='img/placeholder.jpg'">
+                        <div class="user-overlay">
+                            <p class="user-name-small">${user.name}, ${user.age} ${user.verified ? '<i class="fa-solid fa-circle-check text-primary"></i>' : ''}</p>
+                            <p class="distance-small"><i class="fa-solid fa-location-dot"></i> ${user.dist} km away</p>
+                        </div>
+                    </div>
+                `;
+                    grid.appendChild(col);
+                });
+            }
+
+            function filterUsers(type, btn) {
+                document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                let filtered = [...users];
+
+                if (type === 'age') {
+                    filtered.sort((a, b) => a.age - b.age);
+                } else if (type === 'dist') {
+                    filtered.sort((a, b) => a.dist - b.dist);
+                } else if (type === 'verified') {
+                    filtered = users.filter(u => u.verified);
+                }
+
+                renderGrid(filtered);
+            }
+
+            function showSubscriptionModal() {
+                alert("Subscription Required: Please upgrade your plan to chat with people nearby!");
+            }
+
+            // Initial Load
+            renderGrid(users);
+        </script>
+</body>
+
+</html>

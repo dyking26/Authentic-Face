@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,92 +12,119 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/active-user-profile.css">
     <link rel="stylesheet" href="css/global.css">
-    
+
 </head>
+
 <body>
 
-<div class="profile-container">
-    <div class="settings-header">
-        <a href="dashboard.html" class="text-dark"><i class="fa fa-chevron-left"></i></a>
-        <h5 class="mb-0 fw-bold">Edit Profile</h5>
-        <a href="dashboard.html"><button class="btn btn-sm btn-link text-danger fw-bold text-decoration-none">Done</button></a>
-    </div>
+    <div class="profile-container">
+        <div class="settings-header">
+            <a href="dashboard.html" class="text-dark"><i class="fa fa-chevron-left"></i></a>
+            <h5 class="mb-0 fw-bold">Edit Profile</h5>
+            <a href="dashboard.html"><button
+                    class="btn btn-sm btn-link text-danger fw-bold text-decoration-none">Done</button></a>
+        </div>
 
-    <div class="photo-grid">
-        <div class="photo-slot main-photo">
-            <img src="img/dyking snow.jpeg" alt="Me">
-            <div class="add-photo"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="photo-slot">
-            <img src="img/dyking black and white.png" alt="Me">
-            <div class="add-photo"><i class="fa fa-plus"></i></div>
-        </div>
-        <div class="photo-slot">
-            <img src="img/dyking wizzy.jpeg" alt="">
-            <div class="add-photo"><i class="fa fa-plus"></i></div>
-        </div>
-    </div>
-
-    <div class="container px-4">
-        <div class="row g-2">
-            <div class="col-6">
-                <button class="btn btn-verify w-100 py-2 shadow-sm" onclick="window.location.href='verification.html'">
-                    <i class="fa fa-shield-halved me-1"></i> Get Verified
-                </button>
+        <div class="photo-grid">
+            <div class="photo-slot main-photo">
+                <img src="img/dyking snow.jpeg" alt="Me">
+                <div class="add-photo"><i class="fa fa-plus"></i></div>
             </div>
-            <div class="col-6">
-                <button class="btn btn-view w-100 py-2 shadow-sm" onclick="window.location.href='my-profile.html'">
-                    <i class="fa fa-eye me-1"></i> View Profile
-                </button>
+            <div class="photo-slot">
+                <img src="img/dyking black and white.png" alt="Me">
+                <div class="add-photo"><i class="fa fa-plus"></i></div>
+            </div>
+            <div class="photo-slot">
+                <img src="img/dyking wizzy.jpeg" alt="">
+                <div class="add-photo"><i class="fa fa-plus"></i></div>
             </div>
         </div>
+
+        <div class="container px-4">
+            <div class="row g-2">
+                <div class="col-6">
+                    <button class="btn btn-verify w-100 py-2 shadow-sm"
+                        onclick="window.location.href='verification.html'">
+                        <i class="fa fa-shield-halved me-1"></i> Get Verified
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-view w-100 py-2 shadow-sm" onclick="window.location.href='my-profile.html'">
+                        <i class="fa fa-eye me-1"></i> View Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="edit-section">
+            <div class="section-label">About Dyking</div>
+            <textarea class="form-control form-control-custom" rows="3"
+                placeholder="Tell people about yourself..."></textarea>
+        </div>
+
+        <div class="edit-section">
+            <div class="section-label">Job Title</div>
+            <input type="text" class="form-control form-control-custom" value="Software Developer">
+        </div>
+
+        <div class="edit-section mb-5">
+            <div class="section-label">Account Settings</div>
+
+            <a href="#" class="settings-item">
+                <span>Email</span>
+                <span class="text-muted">wisdom@example.com <i class="fa fa-chevron-right ms-2"></i></span>
+            </a>
+
+            <a href="#" class="settings-item">
+                <span>Phone Number</span>
+                <span class="text-muted">+234 812... <i class="fa fa-chevron-right ms-2"></i></span>
+            </a>
+
+            <a href="discovery-settings.html" class="settings-item">
+                <span>Discovery Settings</span>
+                <i class="fa fa-chevron-right"></i>
+            </a>
+
+            <a href="settings.html" class="settings-item">
+                <span>Settings</span>
+                <i class="fa fa-chevron-right"></i>
+            </a>
+
+        </div>
+
+        <a href="login.html" class="logout-btn">Log Out</a>
     </div>
 
-    <div class="edit-section">
-        <div class="section-label">About Dyking</div>
-        <textarea class="form-control form-control-custom" rows="3" placeholder="Tell people about yourself..."></textarea>
+    <div class="mobile-bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fa fa-fire"></i>
+            <span class="nav-label">Swipe</span>
+        </a>
+
+        <a href="nearby-grid.html" class="nav-item">
+            <i class="fa fa-compass"></i>
+            <span class="nav-label">Explore</span>
+        </a>
+
+        <a href="likes.html" class="nav-item">
+            <div class="icon-wrapper">
+                <i class="fa fa-heart"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <span class="nav-label-like">likes</span>
+        </a>
+
+        <a href="message.html" class="nav-item">
+            <i class="fa fa-comment"></i>
+            <span class="nav-label">Chat</span>
+        </a>
+
+        <a href="my-profile.html" class="nav-item">
+            <i class="fa fa-user"></i>
+            <span class="nav-label">Profile</span>
+        </a>
     </div>
-
-    <div class="edit-section">
-        <div class="section-label">Job Title</div>
-        <input type="text" class="form-control form-control-custom" value="Software Developer">
-    </div>
-
-    <div class="edit-section mb-5">
-        <div class="section-label">Account Settings</div>
-        
-        <a href="#" class="settings-item">
-            <span>Email</span>
-            <span class="text-muted">wisdom@example.com <i class="fa fa-chevron-right ms-2"></i></span>
-        </a>
-        
-        <a href="#" class="settings-item">
-            <span>Phone Number</span>
-            <span class="text-muted">+234 812... <i class="fa fa-chevron-right ms-2"></i></span>
-        </a>
-
-        <a href="discovery-settings.html" class="settings-item">
-            <span>Discovery Settings</span>
-            <i class="fa fa-chevron-right"></i>
-        </a>
-
-         <a href="settings.html" class="settings-item">
-            <span>Settings</span>
-            <i class="fa fa-chevron-right"></i>
-        </a>
-        
-    </div>
-
-    <a href="login.html" class="logout-btn">Log Out</a>
-</div>
-
-<div class="mobile-bottom-nav d-md-none">
-    <a href="dashboard.html" class="nav-item"><i class="fa fa-fire"></i></a>
-    <a href="likes.html" class="nav-item"><i class="fa fa-heart"></i></a>
-    <a href="message.html" class="nav-item"><i class="fa fa-comment"></i></a>
-    <a href="my-profile.html" class="nav-item"><i class="fa fa-user"></i></a>
-</div>
-
 </body>
 <script src="dist/js/bootstrap.bundle.min.js"></script>
+
 </html>

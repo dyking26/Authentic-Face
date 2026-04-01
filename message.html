@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Messages | Authentic-Face</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/messaage.css">
     <link rel="stylesheet" href="css/global.css">
 </head>
+
 <body>
 
     <header class="messages-header sticky-top d-flex justify-content-between align-items-center px-3 py-3">
         <h4 class="fw-bold mb-0">Messages</h4>
-        <a href="settings.html"><button class="btn btn-light rounded-circle"><i class="fa-solid fa-sliders"></i></button></a>
+        <a href="settings.html"><button class="btn btn-light rounded-circle"><i
+                    class="fa-solid fa-sliders"></i></button></a>
     </header>
 
     <div class="search-container">
@@ -37,7 +40,7 @@
             </div>
             <span class="small fw-bold">Joy</span>
         </div>
-        </div>
+    </div>
 
     <hr class="mx-3 my-2 text-muted opacity-25">
 
@@ -53,7 +56,8 @@
                     <small class="text-muted">2m ago</small>
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
-                    <p class="mb-0 msg-preview"><span class="text-danger fw-bold">New message ·</span> That sounds amazing!</p>
+                    <p class="mb-0 msg-preview"><span class="text-danger fw-bold">New message ·</span> That sounds
+                        amazing!</p>
                     <span class="unread-badge">1</span>
                 </div>
             </div>
@@ -70,38 +74,61 @@
                 </div>
                 <p class="mb-0 msg-preview">How was your day dear?</p>
             </div>
-        <a href="chat.html" class="chat-item">
-            <div class="position-relative">
-                <img src="img/profile girl 6.jpg" class="chat-avatar-main" alt="Loveth">
-            </div>
-            <div class="ms-3 flex-grow-1">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h6 class="mb-0 fw-bold">jasmine</h6>
-                    <small class="text-muted">1h ago</small>
+            <a href="chat.html" class="chat-item">
+                <div class="position-relative">
+                    <img src="img/profile girl 6.jpg" class="chat-avatar-main" alt="Loveth">
                 </div>
-                <p class="mb-0 msg-preview">Hello!!!?</p>
-            </div>
-        <a href="chat.html" class="chat-item">
-            <div class="position-relative">
-                <img src="img/profile girl 8.jpg" class="chat-avatar-main" alt="Loveth">
-            </div>
-            <div class="ms-3 flex-grow-1">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h6 class="mb-0 fw-bold">Amaka</h6>
-                    <small class="text-muted">1h ago</small>
+                <div class="ms-3 flex-grow-1">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0 fw-bold">jasmine</h6>
+                        <small class="text-muted">1h ago</small>
+                    </div>
+                    <p class="mb-0 msg-preview">Hello!!!?</p>
                 </div>
-                <p class="mb-0 msg-preview">Hey, you good?</p>
-            </div>
-        </a>
+                <a href="chat.html" class="chat-item">
+                    <div class="position-relative">
+                        <img src="img/profile girl 8.jpg" class="chat-avatar-main" alt="Loveth">
+                    </div>
+                    <div class="ms-3 flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 fw-bold">Amaka</h6>
+                            <small class="text-muted">1h ago</small>
+                        </div>
+                        <p class="mb-0 msg-preview">Hey, you good?</p>
+                    </div>
+                </a>
     </div>
 
-    <nav class="mobile-bottom-nav">
-        <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-fire"></i></a>
-        <a href="likes.html" class="nav-link"><i class="fa-solid fa-heart"></i></a>
-        <a href="messages.html" class="nav-link active"><i class="fa-solid fa-comment"></i></a>
-        <a href="my-profile.html" class="nav-link"><i class="fa-solid fa-user"></i></a>
-    </nav>
+    <div class="mobile-bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class="fa fa-fire"></i>
+            <span class="nav-label">Swipe</span>
+        </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <a href="nearby-grid.html" class="nav-item">
+            <i class="fa fa-compass"></i>
+            <span class="nav-label">Explore</span>
+        </a>
+
+        <a href="likes.html" class="nav-item">
+            <div class="icon-wrapper">
+                <i class="fa fa-heart"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <span class="nav-label-like">likes</span>
+        </a>
+
+        <a href="message.html" class="nav-item">
+            <i class="fa fa-comment"></i>
+            <span class="nav-label">Chat</span>
+        </a>
+
+        <a href="my-profile.html" class="nav-item">
+            <i class="fa fa-user"></i>
+            <span class="nav-label">Profile</span>
+        </a>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
